@@ -227,6 +227,15 @@ CREATE OR REPLACE FUNCTION update_mes_donnees()
     FOR EACH ROW
     EXECUTE FUNCTION update_mes_donnees();
 
+CREATE OR REPLACE VIEW histogramme_montant  As
+    SELECT 
+        EXTRACT(YEAR FROM date_creation) AS year,
+        EXTRACT(MONTH FROM date_creation) AS month,
+        COUNT(*) AS total_devis,
+        SUM(montant_total) AS total_montant
+    FROM devis
+    GROUP BY year, month
+    ORDER BY year, month;
 
         ALTER SEQUENCE seq_admin RESTART WITH 1;
         INSERT INTO administrateur VALUES (default,'fitahiana','f@gmail.com','1234'); --ADMIN001

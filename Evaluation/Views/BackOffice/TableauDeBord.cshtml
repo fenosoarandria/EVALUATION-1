@@ -8,8 +8,8 @@
     <h1>Tableau de bord</h1>
     <nav>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item active">Statistique</li>
+            <li class="breadcrumb-item"><a>Statistique</a></li>
+            <li class="breadcrumb-item active">Histogramme des montant des devis par mois et année</li>
         </ol>
     </nav>
 </div><!-- End Page Title -->
@@ -22,50 +22,76 @@
 </section>
 </main><!-- End #main -->
 
-<!-- Bar Chart -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    new Chart(document.querySelector('#barChart'), {
-    type: 'bar',
-    data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July','August','September','October','November','December'],
-        datasets: [{
-        label: 'Bar Chart',
-        data: [65, 59, 80, 80, 56, 55, 40],
-        backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(255, 159, 64, 0.2)',
-            'rgba(255, 205, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(201, 203, 207, 0.2)'
-        ],
-        borderColor: [
-            'rgb(255, 99, 132)',
-            'rgb(255, 159, 64)',
-            'rgb(255, 205, 86)',
-            'rgb(75, 192, 192)',
-            'rgb(54, 162, 235)',
-            'rgb(153, 102, 255)',
-            'rgb(201, 203, 207)'
-        ],
-        borderWidth: 5
-        }]
-    },
-    options: {
-        scales: {
-        y: {
-            beginAtZero: true
-        }
-        }
-    }
-    });
-});
-</script>
-<!-- End Bar CHart -->
+<canvas id="barChart" width="800" height="400"></canvas>
 
-<!-- Pie Chart -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const histogrammeData = @Html.Raw(Json.Serialize(ViewBag.Histogramme));
+
+        // Fonction pour convertir le numéro de mois en nom de mois complet
+        function getMonthName(monthNumber) {
+            const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            return months[monthNumber - 1];
+        }
+
+        const labels = histogrammeData.map(h => `${getMonthName(h.month)}/${h.year}`);
+        const montants = histogrammeData.map(h => h.totalMontant);
+
+        // Tableau de couleurs pour les barres de l'histogramme
+        const backgroundColors = [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)',
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+        ];
+
+        const config = {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Montant des devis',
+                    backgroundColor: backgroundColors,
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1,
+                    data: montants 
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Mois/Année'
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Montant des devis'
+                        }
+                    }
+                }
+            }
+        };
+
+        const myChart = new Chart(
+            document.getElementById('barChart'),
+            config
+        );
+    });
+</script>
+
+@* <!-- Pie Chart -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     new ApexCharts(document.querySelector("#pieChart"), {
@@ -81,4 +107,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }).render();
 });
 </script>
-<!-- End Pie Chart -->
+<!-- End Pie Chart --> *@

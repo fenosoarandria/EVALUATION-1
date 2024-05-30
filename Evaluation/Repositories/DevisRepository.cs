@@ -46,7 +46,7 @@ public class DevisRepository
     {
         _context.Database.ExecuteSqlRaw(sql);
     }
-   public decimal TotalDevis()
+    public decimal TotalDevis()
     {
         return (decimal)(_context._devis.Sum(s => s.MontantTotal) ?? 0);
     }

@@ -38,13 +38,30 @@ public class BackOfficeController : Controller
         ViewBag.Payement = _payement.TotalPayement();
         return View();
     }
+
     public IActionResult Restore()
     {
-        _context.Database.ExecuteSqlRaw(@"TRUNCATE TABLE unite,type_finition,
-            type_maison,lieu,travaux,travaux_type_maison,
-            devis,historique_devis_travaux,historique_devis_finition,payement,
-            temp_maison_travaux,temp_devis,temp_payement cascade");
-        return RedirectToAction("Deconnexion","Connexion");
+        // Redémarrer toutes les séquences
+        _context.Database.ExecuteSqlRaw(@"
+            DO
+            $$
+            DECLARE
+                seq_name text;
+            BEGIN
+                FOR seq_name IN SELECT sequence_name FROM information_schema.sequences WHERE sequence_schema = 'public' LOOP
+                    EXECUTE 'ALTER SEQUENCE ' || seq_name || ' RESTART WITH 1';
+                END LOOP;
+            END;
+            $$;
+        ");
+
+        // TRUNCATE des tables
+        _context.Database.ExecuteSqlRaw(@"TRUNCATE TABLE client,unite, type_finition,
+            type_maison, lieu, travaux, travaux_type_maison,
+            devis, historique_devis_travaux, historique_devis_finition, payement,
+            temp_maison_travaux, temp_devis, temp_payement CASCADE;");
+
+        return RedirectToAction("Index", "BackOffice");
     }
 
     public IActionResult DevisEnCours()
@@ -59,8 +76,11 @@ public class BackOfficeController : Controller
     }
     public IActionResult TableauDeBord()
     {
+        var histogrammeData = _context._histogramme.OrderBy(h => h.Year).ThenBy(h => h.Month).ToList();
+        ViewBag.Histogramme = histogrammeData;
         return View();
     }
+
     public IActionResult ImportDonnee()
     {
         return View();

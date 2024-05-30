@@ -31,6 +31,7 @@ public class ApplicationDbContext : DbContext
     public DbSet<TemporaireDevis> _temp_devis {get; set;}
     public DbSet<TemporairePayement> _temp_payement {get; set;}
     public DbSet<Lieu> _lieu {get; set;}
+    public DbSet<Histogramme> _histogramme {get; set;}
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -123,6 +124,10 @@ public class ApplicationDbContext : DbContext
                 .HasOne(d => d.Unite)
                 .WithMany(tm => tm.Travauxes)
                 .HasForeignKey(d => d.IdUnite);
+
+            modelBuilder.Entity<Histogramme>()
+            .HasNoKey()
+            .ToView("histogramme_montant");
 
     }
 }
