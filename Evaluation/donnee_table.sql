@@ -66,7 +66,6 @@
         pourcentage NUMERIC(10, 2) NOT NULL
     ); 
 
-
     CREATE SEQUENCE seq_devis;
     CREATE TABLE devis(
         id VARCHAR NOT NULL PRIMARY KEY DEFAULT CONCAT('D', LPAD(nextval('seq_devis')::TEXT, 3, '0')),
@@ -192,7 +191,7 @@
         montant NUMERIC(10,2)
     );
 
-    CREATE OR REPLACE FUNCTION update_mes_donnees()
+CREATE OR REPLACE FUNCTION update_mes_donnees()
     RETURNS TRIGGER AS $$
     BEGIN
 
@@ -213,7 +212,8 @@
             WHERE m.ref_devis = d.ref_devis
             ORDER BY m.id DESC
             LIMIT 1
-        )
+        ),
+        ref_devis =  NEW.id
         WHERE d.id = NEW.id;
 
         RETURN NEW;

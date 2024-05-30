@@ -109,7 +109,7 @@
                     <div class="pagination-container">
                         @Html.PagedListPager(
                             (IPagedList)ViewBag.Devis,
-                            page => Url.Action("Index", new { page }),
+                            page => Url.Action("Devis", new { page }),
                             new PagedListRenderOptions { Display = PagedListDisplayMode.IfNeeded, LiElementClasses = new[] { "custom-pagination-item" }, UlElementClasses = new[] { "pagination", "justify-content-center" } }
                         )
                     </div>

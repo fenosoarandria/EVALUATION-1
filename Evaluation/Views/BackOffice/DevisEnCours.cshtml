@@ -42,7 +42,7 @@
                       @foreach(var devis in ViewBag.Devis)
                       {
                         <div class="col-xxl-3 col-md-3">
-                                <a asp-action="DetailDevisEnCours" asp-controller="BackOffice" style="color: black;"  class="card inner-box">
+                                <a asp-action="DetailDevisEnCours" asp-controller="BackOffice" asp-route-id_devis="@devis.Id" style="color: black;"  class="card inner-box">
                                     <div class="inner-content">
                                         <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                             <i class="bi bi-house"></i>

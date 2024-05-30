@@ -25,7 +25,11 @@ public class DevisRepository
     }
     public Devis FindByIdDevis(string id)
     {
-        return  _context._devis?.FirstOrDefault(a => a.Id == id)?? new Devis();
+        return  _context._devis?
+                .Include(d => d.TypeMaison)
+                .Include(d => d.TypeFinition)
+                .Include(d => d.Lieu)
+                .FirstOrDefault(a => a.Id == id)?? new Devis();
     }
 
     public void AddDevis(Devis devis)

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qamQcNfR7CfFhAPk0J1GPP9qjD4EpWlbbAeaGCE4tS8=",
+  "Hash": "U0EYRNU9jc33MyGXISs2VnzuPSerU1Bm1ds55j2Opnk=",
   "Source": "Evaluation",
   "BasePath": "_content/Evaluation",
   "Mode": "Default",
@@ -509,25 +509,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\slides-3.jpg"
-    },
-    {
-      "Identity": "D:\\ITU\\S6\\Mr Rojo\\EVALUATION STAGE 2024\\Evaluation\\wwwroot\\assets\\js\\fetch.js",
-      "SourceId": "Evaluation",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITU\\S6\\Mr Rojo\\EVALUATION STAGE 2024\\Evaluation\\wwwroot\\",
-      "BasePath": "_content/Evaluation",
-      "RelativePath": "assets/js/fetch.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\js\\fetch.js"
     },
     {
       "Identity": "D:\\ITU\\S6\\Mr Rojo\\EVALUATION STAGE 2024\\Evaluation\\wwwroot\\assets\\js\\formValidation.js",

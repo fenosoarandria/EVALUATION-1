@@ -43,7 +43,7 @@ public class FrontOfficeController : Controller
         ViewBag.TypeMaison = _type_maison.FindAll();
         ViewBag.TypeFinition = _type_finition.FindAll();
         ViewBag.Payement = _payement.FindAll();
-        int pageSize = 10; // Nombre d'éléments par page
+        int pageSize = 3; // Nombre d'éléments par page
         int pageNumber = (page ?? 1);
         #pragma warning disable CS8604 // Possible null reference argument.
             string? id_client = _client?.FindIdByContact(HttpContext.Session.GetString("Client"));
@@ -71,13 +71,13 @@ public class FrontOfficeController : Controller
         }    
         return View();
     }
+    [HttpPost]
     public IActionResult AjouteDevis(string type_maison,string type_finition,DateTime date_debut_travaux,string id_lieu)
     {
          using (var transaction = _context.Database.BeginTransaction())
         {
             try
             {
-                
                 #pragma warning disable CS8604 // Possible null reference argument.
                     string? id_client = _client?.FindIdByContact(HttpContext.Session.GetString("Client"));
                 #pragma warning restore CS8604 // Possible null reference argument.
@@ -180,7 +180,6 @@ public IActionResult AjoutePayement(double montant, DateTime date_payement, stri
     public IActionResult GeneratePdf(string id_devis)
     {
         byte[] pdfBytes =PdfGenerator.GeneratePdfOrderForm(id_devis,_historique_travaux,_context);        
-        Console.WriteLine(id_devis);
         // Renvoyer le PDF généré comme un fichier téléchargeable
         return File(pdfBytes, "application/pdf", $"{DateTime.Now}.pdf");
     }

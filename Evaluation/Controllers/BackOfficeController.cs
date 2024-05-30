@@ -14,13 +14,15 @@ public class BackOfficeController : Controller
     private readonly TypeFinitionRepository _finition;
     private readonly ApplicationDbContext _context;
     private readonly AdministrateurRepository _admin;
+    private readonly HistoriqueDevisTravauxRepository _h_devis;
 
 
 
 
-    public BackOfficeController(ILogger<BackOfficeController> logger,AdministrateurRepository ad,TypeFinitionRepository tf,ApplicationDbContext a,Import c,DevisRepository d,PayementRepository p,TravauxRepository t)
+    public BackOfficeController(ILogger<BackOfficeController> logger,HistoriqueDevisTravauxRepository hd,AdministrateurRepository ad,TypeFinitionRepository tf,ApplicationDbContext a,Import c,DevisRepository d,PayementRepository p,TravauxRepository t)
     {
         _logger = logger;
+        _h_devis = hd;
         _admin = ad;
         _finition = tf;
         _context = a;
@@ -50,8 +52,9 @@ public class BackOfficeController : Controller
         ViewBag.Devis = _devis.FindAll();
         return View();
     }
-    public IActionResult DetailDevisEnCours(string id_devise)
+    public IActionResult DetailDevisEnCours(string id_devis)
     {
+        ViewBag.Devis = _h_devis.FindAllByIdDevis(id_devis);
         return View();
     }
     public IActionResult TableauDeBord()
