@@ -1,0 +1,55 @@
+@{
+    Layout = "_LayoutBackOffice";
+}
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Modifier type de finition</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-controller="FrontOffice" asp-action="Index">Accueil</a></li>
+                <li class="breadcrumb-item active">Modification</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="card">
+                    <div class="card-body">
+                        @* <h5 class="card-title">Datatables</h5> *@
+
+                        <!-- Table with stripped rows -->
+                        <table class="table ">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Finition</th>
+                                    <th scope="col">Pourcentage</th>
+                                    <th scope="col">Modifier</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                               @foreach(var finition in ViewBag.Finition){
+
+                                    <tr>
+                                        <td></td>
+                                        <td>@finition.Nom</td>
+                                        <td>@finition.Pourcentage</td>
+                                        <td><a type="button" class="btn btn-outline-primary open-modal" asp-controller="BackOffice" asp-action="ModifierFinition"  asp-route-id_finition="@finition.Id">Modifier</a></td>
+                                    </tr>                                        
+                               }
+                                </tbody>
+                        </table>
+                        <!-- End Table with stripped rows -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</main><!-- End #main -->

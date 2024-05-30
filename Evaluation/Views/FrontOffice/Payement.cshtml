@@ -1,0 +1,58 @@
+@using X.PagedList
+@using X.PagedList.Mvc.Core
+@{
+    Layout = "_LayoutFrontOffice";
+}
+<main id="main" class="main">
+    
+    <div class="pagetitle">
+        <h1>Payement</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Devis</a></li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+        <div class="row">
+            <!-- Left side columns -->
+            <div class="col-lg-12">
+            <div class="row">
+              <form data-action="AjoutePayement"  data-controller="FrontOffice">
+                  
+                  <div class="row mb-3">
+                    <label for="inputDate" class="col-sm-2 col-form-label">Montant a payer</label>
+                    <div class="col-sm-5">
+                      <input type="number" class="form-control" name="montant" required>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="inputDate" class="col-sm-2 col-form-label">Date de payement</label>
+                    <div class="col-sm-5">
+                      <input type="date" class="form-control" name="date_payement"  required>
+                    </div>
+                  </div>
+                  <input type="hidden" name="id_devis" value="@ViewBag.Devis">
+                  
+                <button type="submit" class="btn btn-info" style="width: 40%; margin-left:17%;">Payer </button>
+                  
+              </form>
+                </div>
+            </div><!-- End Left side columns -->
+        </div><!-- End row -->
+    </section>
+</main><!-- End #main -->
+<!-- Modale d'erreur -->
+<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="errorModalLabel">Erreurs de validation</h5>
+      </div>
+      <div class="modal-body">
+        <!-- Les messages d'erreur seront insérés ici -->
+      </div>
+    </div>
+  </div>
+</div>

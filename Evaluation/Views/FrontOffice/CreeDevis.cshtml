@@ -1,0 +1,182 @@
+@using X.PagedList
+@using X.PagedList.Mvc.Core
+@{
+    Layout = "_LayoutFrontOffice";
+}
+<main id="main" class="main">
+    <style>
+        .inner-box {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .inner-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .inner-content {
+            padding: 20px;
+        }
+        
+        .inner-box input[type="radio"] {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .inner-box label {
+            cursor: pointer;
+            display: block;
+            height: 100%;
+        }
+        
+        .inner-box input[type="radio"]:checked + .inner-content {
+            border: 2px solid blue;
+            background-color: #fff;
+        }
+        
+        .inner-content h5 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .inner-content p {
+            margin-bottom: 0;
+            color: #666;
+        }
+    .pagination {
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .custom-pagination-item {
+        margin-right: 5px;
+        animation: fadeIn 0.5s ease; /* Animation pour les éléments de pagination */
+    }
+
+    .custom-pagination-item a {
+        display: block;
+        padding: 10px 15px;
+        background-color: #f1f1f1;
+        border: 1px solid #ccc;
+        text-decoration: none;
+        border-radius: 3px;
+        transition: background-color 0.3s ease;
+    }
+
+    .custom-pagination-item a:hover {
+        background-color: #e9e9e9;
+    }
+
+    .custom-pagination-item.active a {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    .custom-pagination-item.disabled a {
+        pointer-events: none;
+        cursor: default;
+        opacity: 0.5;
+    }
+
+    @Html.Raw("@")keyframes fadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    </style>
+    <div class="pagetitle">
+        <h1>Liste des maison</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Maison</a></li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+        <div class="row">
+            <!-- Left side columns -->
+            <div class="col-lg-12">
+            <div class="row">
+              <form asp-action="AjouteDevis" asp-controller="FrontOffice" method="post" novalidate>
+                  <!-- Inner boxes -->
+                  <div class="row">
+                      @foreach(var maison in ViewBag.TypeMaison)
+                      {
+                          <div class="col-xxl-3 col-md-3">
+                              <label class="card inner-box">
+                                  <input type="radio" name="type_maison" value="@maison.Id">
+                                  @* @(j == 0 ? "checked" : "") *@
+                                  <div class="inner-content">
+                                      <h5>@maison.Nom </h5>
+                                      <p>@maison.Surface</p>
+                                      <p>Size: 2000 sqft</p>
+                                      <p>Rooms: 4</p>
+                                  </div>
+                              </label>
+                          </div>
+                      }
+                      <div class="pagination-container">
+                        @Html.PagedListPager(
+                            (IPagedList)ViewBag.TypeMaison,
+                            page => Url.Action("Index", new { page }),
+                            new PagedListRenderOptions { Display = PagedListDisplayMode.IfNeeded, LiElementClasses = new[] { "custom-pagination-item" }, UlElementClasses = new[] { "pagination", "justify-content-center" } }
+                        )
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <label for="inputDate" class="col-sm-1 col-form-label">Finition</label>
+                    <div class="col-sm-5">
+                      <select class="form-select" id="validationDefault04" name="type_finition" required>
+                      <option selected disabled value="">Choisir finition...</option>
+                        @foreach(var finition in ViewBag.TypeFinition){
+                            <option value="@finition.Id">@finition.Nom</option>
+                        }
+                    </select>
+                    </div>
+                  </div>
+                
+                <div class="row mb-3">
+                    <label for="inputDate" class="col-sm-1 col-form-label">Lieu</label>
+                    <div class="col-sm-5">
+                      <select class="form-select" id="validationDefault04" name="id_lieu" required>
+                      <option selected disabled value="">Choisir lieu...</option>
+                        @foreach(var lieu in ViewBag.Lieu){
+                            <option value="@lieu.Id">@lieu.Nom</option>
+                        }
+                    </select>
+                    </div>
+                  </div>
+
+
+                  <div class="row mb-3">
+                    <label for="inputDate" class="col-sm-1 col-form-label">Creation</label>
+                    <div class="col-sm-5">
+                      <input type="date" class="form-control" name="date_debut_travaux" required>
+                    </div>
+                  </div>
+                  
+                <button type="submit" class="btn btn-info" style="width: 39%; margin-left:9%;">Ajouter devis <i class="bi bi-eye"></i></button>
+                  
+              </form>
+                </div>
+            </div><!-- End Left side columns -->
+        </div><!-- End row -->
+    </section>
+</main><!-- End #main -->

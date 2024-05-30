@@ -1,0 +1,79 @@
+@{
+    Layout = "_LayoutConnexion";
+}  
+<style>
+        /* Styles CSS avancés */
+        main {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #56c5d866;
+        }
+
+        /* Animation de léger mouvement pour le formulaire */
+        .card {
+            animation: moveCard 2s ease infinite alternate;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Ombre douce */
+        }
+
+       @Html.Raw("@")keyframes moveCard {
+        from {
+            opacity: 0.5;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    </style>
+
+
+<main>
+    <!-- Contenu alternatif -->
+    <div class="container" >
+        <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+                        <div class="d-flex justify-content-center py-4">
+                            <a href="index.html" class="logo d-flex align-items-center w-auto">
+                                <!-- Logo -->
+                            </a>
+                        </div><!-- Fin Logo -->
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <div class="pt-4 pb-2">
+                                    <div style="text-align: center;">
+                                        <img src="~/assets/img/logo2.png" style="width: 150px; margin: 0 auto;" alt="">
+                                    </div>
+                                    <h5 class="card-title text-center pb-0 fs-4">Connectez-vous en tant qu'administrateur</h5>
+                                    <p class="text-center small"></p>
+                                </div>
+                                <form class="row g-3 needs-validation" asp-action="CheckLoginAdmin" asp-controller="Connexion" method="POST" novalidate>
+                                    <div class="col-12">
+                                        
+                                        <label for="adminUsername" class="form-label">Identifiant administrateur</label>
+                                        <input type="email" name="email" class="form-control" id="adminUsername" required>
+                                        <div class="invalid-feedback">S'il vous plaît, entrez votre identifiant administrateur!</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="adminPassword" class="form-label">Mot de passe administrateur</label>
+                                        <input type="password" name="mot_de_passe" class="form-control" id="adminPassword" required>
+                                        <div class="invalid-feedback">S'il vous plaît, entrez votre mot de passe administrateur!</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100" type="submit">Connexion</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Bouton d'animation pour afficher un autre formulaire -->
+</main>

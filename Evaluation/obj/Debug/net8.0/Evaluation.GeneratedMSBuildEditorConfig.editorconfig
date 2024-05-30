@@ -1,0 +1,115 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Evaluation
+build_property.RootNamespace = Evaluation
+build_property.ProjectDir = D:\ITU\S6\Mr Rojo\EVALUATION STAGE 2024\Evaluation\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\ITU\S6\Mr Rojo\EVALUATION STAGE 2024\Evaluation
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION STAGE 2024/Evaluation/Views/BackOffice/DetailDevisEnCours.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFja09mZmljZVxEZXRhaWxEZXZpc0VuQ291cnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION STAGE 2024/Evaluation/Views/BackOffice/DevisEnCours.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFja09mZmljZVxEZXZpc0VuQ291cnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION STAGE 2024/Evaluation/Views/BackOffice/Exception.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFja09mZmljZVxFeGNlcHRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION STAGE 2024/Evaluation/Views/BackOffice/Finitions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFja09mZmljZVxGaW5pdGlvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION STAGE 2024/Evaluation/Views/BackOffice/ImportDonnee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFja09mZmljZVxJbXBvcnREb25uZWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION STAGE 2024/Evaluation/Views/BackOffice/ImportPayement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFja09mZmljZVxJbXBvcnRQYXllbWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION STAGE 2024/Evaluation/Views/BackOffice/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFja09mZmljZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION STAGE 2024/Evaluation/Views/BackOffice/ModifierFinition.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFja09mZmljZVxNb2RpZmllckZpbml0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION STAGE 2024/Evaluation/Views/BackOffice/ModifierTravaux.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFja09mZmljZVxNb2RpZmllclRyYXZhdXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION STAGE 2024/Evaluation/Views/BackOffice/TableauDeBord.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFja09mZmljZVxUYWJsZWF1RGVCb3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION STAGE 2024/Evaluation/Views/BackOffice/Travaux.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFja09mZmljZVxUcmF2YXV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION STAGE 2024/Evaluation/Views/Connexion/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29ubmV4aW9uXExvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION STAGE 2024/Evaluation/Views/Connexion/LoginAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29ubmV4aW9uXExvZ2luQWRtaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION STAGE 2024/Evaluation/Views/FrontOffice/CreeDevis.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnJvbnRPZmZpY2VcQ3JlZURldmlzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION STAGE 2024/Evaluation/Views/FrontOffice/Devis.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnJvbnRPZmZpY2VcRGV2aXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION STAGE 2024/Evaluation/Views/FrontOffice/Exception.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnJvbnRPZmZpY2VcRXhjZXB0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION STAGE 2024/Evaluation/Views/FrontOffice/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnJvbnRPZmZpY2VcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION STAGE 2024/Evaluation/Views/FrontOffice/Payement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnJvbnRPZmZpY2VcUGF5ZW1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION STAGE 2024/Evaluation/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION STAGE 2024/Evaluation/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION STAGE 2024/Evaluation/Views/Shared/_LayoutBackOffice.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRCYWNrT2ZmaWNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION STAGE 2024/Evaluation/Views/Shared/_LayoutConnexion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRDb25uZXhpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION STAGE 2024/Evaluation/Views/Shared/_LayoutFrontOffice.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRGcm9udE9mZmljZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ITU/S6/Mr Rojo/EVALUATION STAGE 2024/Evaluation/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
